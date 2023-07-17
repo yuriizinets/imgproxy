@@ -1121,9 +1121,8 @@ func defaultProcessingOptions(headers http.Header) (*ProcessingOptions, error) {
 		if len(headerECT) > 0 {
 			switch headerECT {
 			case "slow-2g": po.Quality = 10
-			case "2g": 		po.Quality = 30
-			case "3g":		po.Quality = 60
-			default:		po.Quality = 100
+			case "2g": 		po.Quality = 25
+			case "3g":		po.Quality = 50
 			}
 		}
 		

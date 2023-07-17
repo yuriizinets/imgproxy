@@ -49,7 +49,7 @@ func initProcessingHandler() {
 	}
 
 	if config.EnableClientHints {
-		vary = append(vary, "Sec-CH-DPR", "DPR", "Sec-CH-Width", "Width")
+		vary = append(vary, "Sec-CH-DPR", "DPR", "Sec-CH-Width", "Width", "ECT")
 	}
 
 	headerVaryValue = strings.Join(vary, ", ")

@@ -1116,6 +1116,17 @@ func defaultProcessingOptions(headers http.Header) (*ProcessingOptions, error) {
 				po.Width = imath.Shrink(w, po.Dpr)
 			}
 		}
+
+		headerECT := headers.Get("ECT")
+		if len(headerECT) > 0 {
+			switch headerECT {
+			case "slow-2g": po.Quality = 10
+			case "2g": 		po.Quality = 30
+			case "3g":		po.Quality = 60
+			default:		po.Quality = 100
+			}
+		}
+		
 	}
 
 	if _, ok := presets["default"]; ok {
